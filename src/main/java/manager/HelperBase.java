@@ -39,7 +39,7 @@ public class HelperBase {
     }
 
 
-    public void pause(int time){
+    public void pause(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
@@ -50,13 +50,15 @@ public class HelperBase {
     public boolean isAlertPresent(String message) {
         Alert alert = new WebDriverWait(wd, 10)
                 .until(ExpectedConditions.alertIsPresent());
-        if (alert != null && alert.getText().contains(message)){
+        if (alert != null && alert.getText().contains(message)) {
+            System.out.println(alert.getText());
+
             //click ok
             alert.accept();
-        //click cancel ---> alert.dismiss();
-        //type into alert ---> alert.sendKeys();
-        return true;
-    }
+            //click cancel ---> alert.dismiss();
+            //type into alert ---> alert.sendKeys();
+            return true;
+        }
         return false;
 
     }
