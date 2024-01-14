@@ -65,6 +65,7 @@ public class RegistrationTests extends TestBase{
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("User already exist"));
+
     }
 
 
