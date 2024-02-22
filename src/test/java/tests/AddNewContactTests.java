@@ -17,7 +17,7 @@ public class AddNewContactTests extends TestBase {
 
     }
 
-    @Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContact.class)
+    @Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContact.class, invocationCount = 5)
     public void addContactSuccessAllFields(Contact contact) {
        int i = (int) (System.currentTimeMillis() / 1000 % 3600);
 //        Contact contact = Contact.builder()
